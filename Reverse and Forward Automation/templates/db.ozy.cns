@@ -1,0 +1,54 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	ozy.cns. root.ozy.cns. (
+			 2024092403	; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	ozy.cns.
+@	IN	A	192.168.100.136
+@	IN	MX	10	mail
+
+internetworking.1.srv	IN	A	192.168.100.200
+internetworking.2.srv   IN      A       192.168.100.201
+internetworking.3.srv   IN      A       192.168.100.202
+
+; Round Robin A Records for www
+; www     IN      A       192.168.100.211
+; www     IN      A       192.168.100.212
+www	IN	A	192.168.100.210
+; www   IN      A       192.168.43.13
+
+; mail   IN      A       192.168.43.239
+mail	IN	A	192.168.100.136
+; mail   IN      A       10.20.113.37
+; mail 	IN	A	10.4.181.23
+
+nfs	IN	A	192.168.100.141
+smb	IN	A	192.168.100.141
+
+ldap	IN	A	192.168.100.137
+ldapslv	IN	A	192.168.100.138
+
+dns	IN	A	192.168.100.220
+dnsslv	IN	A	192.168.100.221
+
+stu	IN	A	192.168.100.136
+gav	IN	A	192.168.100.136
+
+iac	IN	A	192.168.100.200
+
+sql	IN	A	192.168.100.230
+sqlslv1	IN	A	192.168.100.231
+sqlslv2	IN	A	192.168.100.232
+
+nesdev	IN	A	192.168.100.135
+; nesdev   IN      A       10.20.113.44
+
+; soc	IN	A	192.168.100.143
+soc 	IN	A	10.20.113.43
+; soc	IN	A	10.4.181.24
